@@ -11,11 +11,11 @@ class IRunnable {
         /*
           Executes an instance of the task as part of a bulk task launch.
           
-           - task_id: the current task identifier. This value will be
+          - task_id: the current task identifier. This value will be
               between 0 and num_total_tasks-1.
               
-           - num_total_tasks: the total number of tasks in the bulk
-             task launch.
+          - num_total_tasks: the total number of tasks in the bulk
+            task launch.
          */
         virtual void runTask(int task_id, int num_total_tasks) = 0;
 };
@@ -25,8 +25,8 @@ class ITaskSystem {
         /*
           Instantiates a task system.
 
-           - num_threads: the maximum number of threads that the task system
-             can use.
+          - num_threads: the maximum number of threads that the task system
+            can use.
          */
         ITaskSystem(int num_threads);
         virtual ~ITaskSystem();
@@ -53,7 +53,7 @@ class ITaskSystem {
 
           The caller must invoke sync() to guarantee completion of the
           tasks in this bulk task launch.
- 
+
           Returns an identifer that can be used in subsequent calls to
           runAsnycWithDeps() to specify a dependency of some future
           bulk task launch on this bulk task launch.
